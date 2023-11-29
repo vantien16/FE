@@ -1,0 +1,201 @@
+@import "../../style.scss";
+
+.rightBar {
+  @include themify($themes) {
+    flex: 2.8;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    background-color: themed("bgSoft");
+
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 20px;
+
+      .item {
+        -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: themed("bg");
+
+        span {
+          color: gray;
+        }
+
+        .user-list {
+          h2 {
+            font-size: 18px;
+            color: themed("textColor");
+          }
+
+          ul {
+            list-style: none;
+            padding: 0;
+
+            .user {
+              display: flex;
+              align-items: center;
+              margin: 20px 0px;
+              transition: background-color 0.2s ease-in-out,
+                padding 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+
+              &:hover {
+                background-color: rgb(212, 206, 206); // Màu nền khi hover
+                padding: 5px; // Padding khi hover
+                border-radius: 10px; // Border radius khi hover
+              }
+
+              .avatar-frame {
+                position: relative;
+
+                img {
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  object-fit: cover;
+                }
+
+                .online-dot {
+                  width: 12px;
+                  height: 12px;
+                  border-radius: 50%;
+                  background-color: limegreen;
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                }
+              }
+
+              .user-name {
+                font-weight: 500;
+                color: themed("textColor");
+                margin-left: 10px;
+              }
+
+              .chat-box {
+                // ... Thiết lập ban đầu cho khung chat box
+
+                display: none; // Ẩn ban đầu
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 0; // Đặt chiều rộng ban đầu là 0
+                height: 400px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                z-index: 1;
+                transition: width 0.3s ease-in-out; // Thêm hiệu ứng transition cho chiều rộng
+
+                h2 {
+                  font-size: 20px;
+                  padding: 20px;
+                }
+                /* chat-container.css */
+
+                /* Chat container */
+                .chat-container {
+                  background-color: #f0f0f0;
+                  border: 1px solid #ccc;
+                  border-radius: 8px;
+                  padding: 10px;
+                  max-width: 400px; /* Adjust the width as needed */
+                  margin: 0 auto; /* Center the chat container on the page */
+                }
+
+                /* Chat messages */
+                .chat-message {
+                  margin-bottom: 10px;
+                }
+
+                /* User messages */
+                .user-message {
+                  background-color: #007bff;
+                  color: #fff;
+                  padding: 8px 12px;
+                  border-radius: 8px;
+                  max-width: 70%; /* Adjust the width as needed */
+                  align-self: flex-end;
+                }
+
+                /* Other user's messages */
+                .other-user-message {
+                  background-color: #e0e0e0;
+                  padding: 8px 12px;
+                  border-radius: 8px;
+                  max-width: 70%; /* Adjust the width as needed */
+                  align-self: flex-start;
+                }
+
+                /* Input box for typing messages */
+                .chat-input {
+                  width: 100%;
+                  padding: 8px;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  margin-top: 10px;
+                }
+
+                /* Send button */
+                .send-button {
+                  background-color: #007bff;
+                  color: #fff;
+                  border: none;
+                  border-radius: 4px;
+                  padding: 8px 12px;
+                  cursor: pointer;
+                }
+              }
+            }
+
+            &.active {
+              .chat-box {
+                display: block;
+                width: 300px; // Đặt lại chiều rộng khi .user có lớp active
+              }
+            }
+          }
+        }
+
+        .search-bar {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          position: relative;
+
+          input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+          }
+
+          button {
+            padding: 10px 20px;
+            background: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}

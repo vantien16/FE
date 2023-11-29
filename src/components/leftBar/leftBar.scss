@@ -1,0 +1,88 @@
+@import "../../style.scss";
+
+.leftBar {
+  @include themify($themes) {
+    flex: 2;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    @include mobile {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 20px;
+
+      hr {
+        margin: 20px 0px;
+        border: none;
+        height: 0.5px;
+        background-color: themed("border");
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span {
+          font-size: 12px;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          transition: transform 0.2s, filter 0.2s;
+
+          &:hover {
+            transform: scale(
+              1.05
+            ); // Khi di chuột vào, phóng to 105% kích thước
+            filter: brightness(1.2); // Khi di chuột vào, làm sáng lên 20%
+            background-color: #9a8d8d;
+            border-radius: 10px;
+            padding: 5px;
+          }
+          img {
+            width: 30px;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+
+        .custom-link {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+  }
+}

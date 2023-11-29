@@ -1,0 +1,194 @@
+@import "../../style.scss";
+
+.staff-profile {
+  @include themify($themes) {
+    background-color: themed("bgSoft");
+    .images {
+      width: 100%;
+      height: 300px;
+      position: relative;
+
+      .cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .profilePic {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 200px;
+      }
+    }
+    .profileContainer {
+      padding: 20px 70px;
+
+      @include mobile {
+        padding: 10px;
+      }
+
+      @include tablet {
+        padding: 20px;
+      }
+
+      .uInfo {
+        height: 180px;
+        -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        border-radius: 20px;
+        background-color: themed("bg");
+        color: themed("textColor");
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        @include mobile {
+          flex-direction: column;
+          height: 30vh;
+          padding: 20px;
+          margin-top: 100px;
+        }
+
+        .left {
+          flex: 1;
+          display: flex;
+          gap: 10px;
+
+          @include tablet {
+            flex-wrap: wrap;
+          }
+
+          a {
+            color: themed("textColorSoft");
+          }
+        }
+
+        .center {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+
+          span {
+            font-size: 30px;
+            font-weight: 500;
+            width: 0px;
+          }
+
+          .info {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            .item {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              color: themed("textColorSoft");
+
+              span {
+                font-size: 12px;
+              }
+            }
+          }
+          button {
+            border: none;
+            background-color: #5271ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+
+        .right {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 10px;
+        }
+      }
+      // staff-profile.scss
+
+      .pet-approval-frame {
+        // display: flex;
+        // justify-content: space-between;
+        // flex-wrap: wrap;
+
+        .pet-approval-box {
+          flex: 0 1 calc(30% - 10px);
+          display: flex;
+          flex-direction: column; // Đặt flex-direction thành column để sắp xếp các phần tử theo chiều dọc
+          border: 1px solid #ccc;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          margin: 20px auto;
+          padding: 20px;
+          max-width: 400px;
+          background-color: #f8f5f7;
+          border-radius: 10px;
+
+          .avatar-container {
+            // text-align: center;
+
+            .avatar {
+              float: left;
+              width: 60px; /* Đặt kích thước avatar dựa trên yêu cầu của bạn */
+              height: 60px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin: 0 auto;
+              margin-bottom: 10px;
+            }
+
+            .avatar-container p {
+              float: left; /* Xóa khoảng cách bên dưới phần tử <p> */
+              margin-left: 10px;
+            }
+          }
+
+          .pet-approval-box img {
+            max-width: 100%;
+            height: auto;
+          }
+
+          .approve-button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #45a049;
+            }
+          }
+          .reject-button {
+            background-color: rgb(250, 73, 73);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: rgb(238, 113, 113);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+@import "../../style.scss";
+
+.appliedc {
+  @include themify($themes) {
+    // height: 192px;
+    // width: 712px;
+    max-width: 600px;
+    -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    border-radius: 20px;
+    background-color: themed("bg");
+    color: themed("textColor");
+    max-width: 80%;
+    align-items: center;
+    // max-width: 100%;
+    // max-width: 800px;
+    // border-radius: 20px;
+    // background-color: themed("bg");
+    // color: themed("textColor");
+    // box-shadow: 0 0 25px -10px rgba(0, 0, 0, 0.38);
+    margin: 15px auto;
+
+    .container {
+      padding: 20px;
+      position: relative;
+
+      .user {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .userInfo {
+          display: flex;
+          gap: 20px;
+
+          .avatar {
+            width: 45px;
+            height: 45px;
+            position: relative;
+          }
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+          }
+
+          .avtpet {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+          }
+
+          .details {
+            display: flex;
+            flex-direction: column;
+
+            .name {
+              font-weight: 600;
+            }
+            .pet-name {
+              font-weight: 500;
+              font-size: 15px;
+            }
+
+            .date {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      .ccontent {
+        margin: 20px 0px;
+        width: 600px;
+        word-wrap: break-word;
+
+        img {
+          max-height: 400px;
+          max-width: 800px;
+          width: 100%;
+
+          object-fit: cover;
+          margin-top: 20px;
+        }
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 250px;
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
